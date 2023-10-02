@@ -1,0 +1,313 @@
+@import "src/styles/breackpoints.scss"
+
+.sidebar-container 
+    width: 100%
+    overflow: hidden
+    position: fixed
+    bottom: 0
+    z-index: 50
+    left: 0
+    transition: all cubic-bezier(0.4, 0, 0.2, 1) 500ms
+    border-top-left-radius: 10px
+    border-top-right-radius: 10px 
+    box-shadow: 0px -4px 4px 0px rgba(240, 240, 240, 0.25)
+
+    @include media(xl)
+        border-radius: 0px
+        height: 100%
+        max-height: 100vh
+        padding: 24px 0px 48px 24px
+        background-color: rgba(248, 248, 248, 1)
+        box-shadow: none
+        border-radius: 0px
+        position: static
+        overflow: hidden
+        gap: 24px
+
+    @include media(xl)
+        &.def
+            max-width: max-content
+            padding: 24px
+
+.sidebar-container.close
+    width: 76px
+    min-width: 76px
+    padding: 24px 0px 48px 0px
+    
+    .sidebar-info
+        padding-left: 0
+        
+        .sidebar-logo
+            padding: 8px 0px
+
+            .logo
+                margin: 0 auto
+
+        .sidebar-menu
+            padding-left: 0px
+
+            > li
+                padding-right: 0px
+
+                .sidebar-button
+                    padding: 18px 20px
+                    gap: 0px
+                    justify-content: center
+
+                    > .icon
+                        margin-left: 6px
+
+        .switch
+            rotate: 180deg
+            margin-left: 22px
+
+.sidebar-container.rolled
+    width: 76px
+    min-width: 76px
+    padding: 24px 0px 48px 0px
+    
+    .sidebar-info
+        padding-left: 0
+        
+        .sidebar-logo
+            justify-content: center
+            display: block
+            margin: 0 auto
+            
+            .hide 
+                display: none
+
+        .sidebar-menu
+            padding-left: 0px
+
+            > li
+                padding-right: 0px
+                
+                .sidebar-button
+                    padding: 18px 20px
+                    gap: 0px
+
+                    > .icon 
+                        margin-left: 6px
+                    .hide
+                        display: none
+
+.sidebar-container.back
+    background: transparent
+    display: grid
+    grid-template-rows: auto 1fr
+
+    .sidebar-info
+        @include media(xl)
+            padding: 72px 0px 48px 24px
+
+    .sidebar-menu
+        > li
+            .sidebar-button
+                > .icon
+                    @include media(lg)
+                        margin-left: 6px
+                    
+.sidebar-container.back
+    @include media(xl)
+        padding: 20px 0px 20px 0px
+        gap: 24px
+
+.sidebar-container.back.close
+
+    .sidebar-info
+        padding: 72px 0px 48px 0px
+
+
+
+.sidebar-link
+    @include media(2xs)
+        display: none !important
+
+    @include media(xl)
+        display: flex !important
+        
+.sidebar-link-text
+    white-space: nowrap
+
+.sidebar-info
+  width: 100%
+  gap: 24px
+  transition: all cubic-bezier(0.4, 0, 0.2, 1) 500ms
+  background-color: rgba(248, 248, 248, 1)
+  padding: 12px 24px
+
+
+  @include media(lg)
+    padding: 24px 48px
+
+  @include media(xl)
+    border-radius: 10px
+    height: 100%
+    display: flex
+    padding: 0px
+    flex-direction: column
+    justify-content: space-between
+
+.sidebar-logo
+  display: none
+  padding: 8px 16px
+  gap: 8px
+  transition: all cubic-bezier(0.4, 0, 0.2, 1) 300ms
+  align-items: center
+
+  @include media(xl)
+    display: grid
+    grid-template-columns: 1fr auto
+
+  &.def
+    padding: 0px
+  
+  > .icon
+      width: 37px
+      height: 37px
+      color: rgba(255, 195, 80, 1)
+
+.logo-text
+  font-weight: 800
+  font-size: 20px
+  line-height: 20px
+  text-transform: uppercase
+  display: flex
+  gap: 4px
+  color: rgba(68, 71, 88, 1)
+
+  > .logo-text-2
+      color: rgba(73, 198, 116, 1)
+
+.sidebar-menu
+  margin: 0
+  padding: 0
+  display: flex
+  justify-content: space-between
+  gap: 12px
+
+  @include media(xl)
+    display: grid
+    justify-content: stretch
+
+    > li
+        width: 100%
+        transition: all cubic-bezier(0.4, 0, 0.2, 1) 300ms
+        border-bottom: 1px solid rgba(239, 239, 239, 1)
+        padding-bottom: 12px
+
+        &:last-child
+          border: none
+
+    > li.selected
+        padding-left: 7px 
+        border-color: transparent
+
+.main
+  grid-template-rows: auto auto 1fr auto auto
+  height: 100%
+
+.sidebar-button
+  width: max-content
+  flex-direction: column
+  display: flex
+  gap: 4px
+  background: transparent
+  transition-property: all
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1)
+  transition-duration: 300ms
+  cursor: pointer
+  box-sizing: border-box
+  color: rgba(68, 71, 88, 1)
+  align-items: center
+  width: 100%
+
+  > span
+    font-size: 10px
+    line-height: 15px
+    display: none
+
+    @include media(lg)
+        display: block
+
+  &:hover
+    color: rgb(73, 198, 116)
+    background-color: white
+    border-color: white
+
+  &:hover + li
+    border-color: transparent
+
+        
+
+  @include media(xl)
+    display: grid
+    grid-template-columns: auto 1fr
+    padding: 24px
+    gap: 12px
+    justify-content: start
+    flex-direction: row
+    border-radius: 10px 0px 0px 10px
+    border-left: none
+    border-right: none
+    border-bottom: none
+
+    > span
+        white-space: nowrap
+        font-size: 16px
+        line-height: 20px
+
+
+  &.selected
+    color: rgba(73, 198, 116, 1)
+
+    @include media(xl)
+        margin-right: -7px
+        background: white
+        border-color: transparent
+
+.sidebar-switcher
+    display: none
+    gap: 12px
+    color: rgba(68, 71, 88, 1)
+
+    @include media(xl)
+        display: flex
+
+.switch
+  border-radius: 100%
+  background: rgba(73, 198, 116, 1)
+  width: 28px
+  height: 28px
+  border: none
+  display: none
+  cursor: pointer
+  transition: all cubic-bezier(0.4, 0, 0.2, 1) 300ms
+  position: relative
+  margin-left: 0px
+
+  @include media(xl)
+    display: flex
+
+  &::before
+    content: ""
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='13' height='13' viewBox='0 0 13 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M5.44678 2.56934L1.51823 6.41771C1.47877 6.45636 1.47812 6.51969 1.51678 6.55914L5.44678 10.5693' stroke='white' stroke-width='2' stroke-linecap='round'/%3e%3cpath d='M11.4468 2.56934L7.51823 6.41771C7.47877 6.45636 7.47812 6.51969 7.51678 6.55914L11.4468 10.5693' stroke='white' stroke-width='2' stroke-linecap='round'/%3e%3c/svg%3e ")
+    background-position: center
+    background-repeat: no-repeat
+    width: 13px
+    height: 13px
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translateX(-50%) translateY(-50%)
+    
+
+.fade-enter-active, .fade-leave-active
+  transition: opacity 0.5s ease
+
+.fade-enter-from, .fade-leave-to
+  opacity: 0
+
+.icon 
+    transition: none

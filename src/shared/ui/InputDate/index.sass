@@ -1,0 +1,183 @@
+.container-date
+  display: grid
+  gap: 4px
+
+.title-date
+  font-weight: 500
+  font-size: 12px
+  line-height: 18px
+  text-transform: uppercase
+  margin-left: 4px
+
+.label-date
+  background: rgba(255, 255, 255, 1)
+  box-sizing: border-box
+  display: flex
+  padding: 8px 12px
+  gap: 10px
+  border: 1px solid #EFEFEF
+  box-shadow: 0px 4px 4px rgba(240, 240, 240, 0.25)
+  border-radius: 4px
+
+  &.date
+    width: 30px
+    height: 30px
+
+  &.time
+    width: 24px
+    height: 24px
+
+.date-field
+  outline: none
+  background: transparent
+  border: none
+  width: 89px
+  color: rgba(105, 107, 117, 1)
+
+  &:focus
+    outline: none
+
+  &::placeholder
+    color: rgba(105, 107, 117, 1)
+
+.air-datepicker
+  width: max-content
+
+.air-datepicker-nav--title
+  color: rgba(68, 71, 88, 1)
+  font-size: 18px
+  line-height: 27px
+  transition: all cubic-bezier(0.4, 0, 0.2, 1) 300ms
+
+.air-datepicker-nav--action
+  border-radius: 100%
+  background-color: rgba(255, 195, 80, 0.25)
+  color: rgba(255, 195, 80, 1)
+  transition: all cubic-bezier(0.4, 0, 0.2, 1) 300ms
+
+  path
+    fill: none
+    stroke: rgba(255, 195, 80, 1)
+    stroke-width: 2px
+    transition: all cubic-bezier(0.4, 0, 0.2, 1) 300ms
+
+  &:hover
+    background-color: rgba(255, 195, 80, 1)
+
+    path
+      stroke: white
+
+.air-datepicker-body--day-names
+  font-size: 19px
+  line-height: 28.5px
+
+.air-datepicker-body--day-name
+  color: rgba(68, 71, 88, 1)
+
+  &.-weekend-
+    color: rgba(255, 195, 80, 1)
+
+.air-datepicker-body--cells.-days-
+  gap: 5px
+
+.air-datepicker-cell
+  &.-day-
+    border-radius: 100%
+    font-size: 19px
+    line-height: 28.5px
+    color: rgba(68, 71, 88, 1)
+    position: relative
+    width: 35px
+    height: 35px
+    transition: all cubic-bezier(0.4, 0, 0.2, 1) 300ms
+
+    &.-other-month-
+      color: rgba(190, 189, 189, 1)
+
+    &.-focus-
+      background-color: rgba(255, 195, 80, 0.25)
+
+  &.-selected-
+    &.-current-
+      box-shadow: 0px 11px 25px rgba(255, 195, 80, 0.2)
+      background-color: rgba(255, 195, 80, 1)
+      color: white
+
+    box-shadow: 0px 11px 25px rgba(255, 195, 80, 0.2)
+    background-color: rgba(255, 195, 80, 1)
+    color: white
+
+  &.-day-
+    &.-current .air-datepicker-cell.-day-.-focus-
+      background-color: rgba(255, 195, 80, 0.25)
+
+    &.-selected-.-focus-
+      background-color: rgba(255, 195, 80, 1)
+      color: white
+
+.air-datepicker-time
+  padding: 0
+
+.air-datepicker-time--current
+  background-color: rgba(105, 107, 117, 1)
+  padding: 4px
+  border-radius: 4px
+  color: white
+
+.air-datepicker-time--current-minutes
+  position: relative
+
+.air-datepicker-time--current-hours:after
+  inset: -4px -3px -4px -4px
+  border-radius: 4px 0px 0px 4px
+  background-color: rgba(255, 195, 80, 1)
+  transition: all cubic-bezier(0.4, 0, 0.2, 1) 300ms
+
+.air-datepicker-time--current-minutes:after
+  inset: -4px -4px -4px -3px
+  border-radius: 0px 4px 4px 0px
+  background-color: rgba(255, 195, 80, 1)
+  transition: all cubic-bezier(0.4, 0, 0.2, 1) 300ms
+
+.air-datepicker-time--row > input[type='range']
+  -webkit-appearance: none
+
+input[type='range']
+  &::-webkit-slider-runnable-track, 
+  &::-webkit-slider-thumb
+    -webkit-appearance: none
+
+.air-datepicker-time--row > input[type='range']
+  &::-webkit-slider-runnable-track
+    background: rgba(105, 107, 117, 1)
+    height: 2px
+
+  &::-webkit-slider-thumb
+    -webkit-appearance: none !important
+    background: rgba(255, 195, 80, 1)
+    border: none
+    height: 12px
+    border-radius: 100%
+    margin-bottom: -1px
+    width: 12px
+
+    &:active
+      -webkit-appearance: none !important
+      background: rgba(255, 195, 80, 1)
+
+.air-datepicker-body--cells.-months-
+  gap: 10px
+
+.air-datepicker-cell
+  &.-month-
+    padding: 10px
+    transition: all cubic-bezier(0.4, 0, 0.2, 1) 300ms
+
+  &.-year-
+    &.-selected-.-focus-
+      background: rgba(255, 195, 80, 1)
+
+    &.-current-
+      background: rgba(255, 195, 80, 1)
+      color: white
+      opacity: 50%

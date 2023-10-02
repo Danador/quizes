@@ -1,0 +1,79 @@
+@import "src/styles/breackpoints.scss"
+    
+.modal-slide
+    background: rgba(0,0,0,0.5)
+    backdrop-filter: blur(4px)
+    opacity: 0
+    inset: 0
+    display: grid
+    position: fixed
+    z-index: 50
+    grid-template-columns: auto 1fr
+    visibility: hidden
+    overflow-x: hidden
+    transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 300ms
+
+    &--open
+        opacity: 100
+        visibility: visible
+
+.modal-slide__sidebar
+    height: 100%
+    background: rgba(248, 250, 251, 1)
+    padding: 24px
+    width: 100%
+    transform: translateX(-100%)
+    transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 500ms
+    display: flex
+    flex-direction: column
+    gap: 32px
+    overflow-y: auto
+
+    &--open
+        transform: translateX(0)
+
+    @include media(lg)
+        min-width: 500px
+        max-width: 500px
+
+    @include media(xl)
+        padding: 36px
+
+    @include media(3xl)
+        min-width: 630px
+        max-width: 630px
+
+
+.modal-slide__content
+    align-items: center
+    justify-content: center
+    opacity: 0
+    visibility: invisible
+    transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 500ms
+    display: none
+
+    &--open
+        opacity: 100
+        visibility: visible
+
+    @include media(lg)
+        &--open
+            display: flex
+
+.modal-slide__head
+    display: flex
+    align-items: flex-start
+    justify-content: space-between
+    width: 100%
+
+    > p 
+        color: #696B75
+        font-size: 24px
+        font-weight: 600
+        line-height: normal
+
+.modal-slide__close
+    background: #49C674 !important
+    border-radius: 5px 
+    padding: 5px !important
+    color: white

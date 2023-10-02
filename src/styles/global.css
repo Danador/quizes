@@ -1,0 +1,68 @@
+body {
+  width: 100%;
+  min-height: 100vh;
+}
+
+body.close {
+  overflow: hidden;
+}
+
+* {
+	scrollbar-color: rgba(217, 217, 217, 1) rgba(255,255,255, 0.1);
+	scrollbar-width: thin;
+}
+
+
+*::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+*::-webkit-scrollbar-thumb {
+    border-color: rgba(217, 217, 217, 1);
+    background-color: rgba(217, 217, 217, 1);
+    border-radius: 10px;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.hu-color-picker {
+    width: 100% !important;
+    max-width: 220px;
+}
+
+.colors {
+    display: grid;
+    gap: 4px;
+    margin-top: 10px !important;
+    grid-template-columns: repeat(9,minmax(0,1fr));
+}
+
+.colors li.item {
+    margin: 0;
+}
+
+.rollUp {
+    transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 300ms;
+    overflow: hidden;
+    height: 0px;
+}
+
+
+/* *[draggable="false"] {
+    cursor: grab;
+}
+
+*[draggable="true"] {
+    cursor: grabbing;
+} */

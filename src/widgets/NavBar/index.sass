@@ -1,0 +1,82 @@
+@import "src/styles/breackpoints.scss"
+
+.navigation-container
+    width: 100%
+    overflow-x: auto
+    
+    @include media(xl)
+        margin-top: 24px
+
+.navigation-menu
+    padding: 8px 16px
+    background-color: #f8fafb
+    white-space: nowrap
+    overflow-x: auto
+    align-items: center
+    display: none
+    position: relative
+    border-radius: 16px
+    width: 100%
+    gap: 8px
+    grid-auto-flow: column
+
+    @include media(lg)
+        display: grid
+        white-space: normal
+        grid-template-columns: repeat(4, minmax(0, 1fr))
+    
+.nav-button
+    border-radius: 4px
+    color: rgba(68, 71, 88, 1)
+    padding: 15px 8px !important
+    font-size: 12px
+    text-align: center
+    font-weight: 600
+
+    &.active
+        color: white
+        background-color: #49C674
+
+        &:hover
+            background-color: #49C674
+
+    &:hover
+        background-color: rgba(153, 233, 181, 1)
+
+    @include media(3xl)
+        font-size: 14px
+
+.navigation-mobile-menu
+    padding: 8px 12px
+    display: flex
+    gap: 8px
+    align-items: center
+    width: 100%
+    justify-content: space-between
+    border-radius: 10px
+    background: rgba(248, 250, 251, 0.70)
+
+    > span 
+        color: #696B75
+        text-align: center
+        font-size: 12px
+        font-weight: 600
+        line-height: 16px
+        text-transform: uppercase
+        transition: all ease 300ms
+
+    @include media(lg)
+        display: none
+
+.nav-btn-prev,
+.nav-btn-next
+    background-color: rgba(73, 198, 116, 1)
+    color: white
+    border-radius: 5px
+    &:hover
+        background-color: rgba(153, 233, 181, 1)
+    &:disabled
+        opacity: 50%
+            
+.nav-btn-next 
+    rotate: 180deg

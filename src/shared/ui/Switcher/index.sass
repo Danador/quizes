@@ -1,0 +1,55 @@
+.swither-container
+  display: flex
+
+.switcher-field
+  position: absolute
+  width: 1px
+  height: 1px
+  padding: 0
+  margin: -1px
+  overflow: hidden
+  clip: rect(0, 0, 0, 0)
+  white-space: nowrap
+  border-width: 0
+
+.switcher
+  display: block
+  width: 43px
+  height: 24px
+  border-radius: 14px
+  box-sizing: border-box
+  overflow: hidden
+  cursor: pointer
+  background: #E0E0E0
+  position: relative
+
+  &::before
+    content: ""
+    position: absolute
+    width: 20px
+    height: 20px
+    border-radius: 100%
+    transition-property: all
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1)
+    transition-duration: 300ms
+    background: white
+    top: 2px
+    left: 2px
+    z-index: 10
+
+  &::after
+    content: ""
+    position: absolute
+    background: #49C674
+    inset: 0
+    transform: translateX(-100%)
+    transition-property: all
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1)
+    transition-duration: 300ms
+
+.switcher-field:checked ~ .switcher
+  &::before
+    left: 21px
+
+  &::after
+    transform: translateX(0%)

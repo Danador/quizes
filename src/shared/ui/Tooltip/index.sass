@@ -1,0 +1,42 @@
+.tooltip
+  padding: 10px
+  color: rgba(105, 107, 117, 1)
+  font-size: 12px
+  line-height: 18px
+  font-weight: 500
+  border-radius: 2px
+  position: absolute
+  right: 50%
+  transform: translateX(50%)
+  z-index: 10
+  background-color: rgba(255, 234, 167, 1)
+  transition: all cubic-bezier(0.4, 0, 0.2, 1) 300ms
+  opacity: 0
+  visibility: hidden
+
+  &--position__bottom
+    bottom: calc(100% + 12px)
+
+  &--position__top
+    top: calc(100% + 12px)
+
+  &.show 
+    opacity: 100
+    visibility: visible
+
+  &::before
+    content: ""
+    position: absolute
+    width: 14px
+    height: 12px
+    left: 50%
+    transform: translateX(-50%)
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%)
+    background-color: rgba(255, 234, 167, 1)
+
+  &--position__bottom::before
+    top: -12px
+
+  &--position__top::before
+    rotate: 180deg
+    bottom: -12px

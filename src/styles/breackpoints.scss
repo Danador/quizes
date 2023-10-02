@@ -1,0 +1,15 @@
+$breakpoints: (
+    2xs: '(min-width : 320px)',
+    sm: '(min-width : 640px)',
+    xs: '(min-width : 375px)',
+    lg: '(min-width : 960px)',
+    xl: '(min-width : 1280px)',
+    2xl: '(min-width : 1560px)',
+    3xl: '(min-width : 1920px)',
+);
+
+@mixin media($breakpoint, $media: 'screen') {
+    @media #{$media} and #{map-get( $breakpoints, $breakpoint )} {
+        @content; 
+    }
+}

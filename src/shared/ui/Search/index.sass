@@ -1,0 +1,57 @@
+.search-form 
+  height: auto
+  width: auto
+
+.search-container
+  background-color: rgba(255, 255, 255, 1)
+  padding: 16px 12px
+  height: 62px
+  box-sizing: border-box
+  border-radius: 4px
+  position: relative
+  border: 1px solid rgba(239, 239, 239, 1)
+  display: flex
+  gap: 10px
+  transition-property: all
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1)
+  transition-duration: 300ms
+
+.search-btn
+  padding: 0px
+  background: transparent
+  border: none
+  cursor: pointer
+
+  > .icon
+    color: rgba(190, 189, 189, 1)
+
+.search-close-btn
+  padding: 0px
+  background: transparent
+  border: none
+  cursor: pointer
+  opacity: 0
+  transition: all cubic-bezier(0.4, 0, 0.2, 1) 300ms
+
+  > .icon
+    color: rgba(217, 217, 217, 1)
+
+.search-field:focus-visible ~ .search-close-btn
+  opacity: 100
+
+.search-container:focus-within
+  border-color: rgba(190, 189, 189, 1)
+
+.search-field
+  color: rgba(105, 107, 117, 1)
+  font-size: 14px
+  line-height: 20px
+  outline: none
+  border: none
+  background: transparent
+
+  &:focus
+    outline: none
+
+  &::placeholder
+    color: rgba(217, 217, 217, 1)

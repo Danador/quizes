@@ -1,0 +1,103 @@
+
+.checkbox-container
+    display: flex
+    align-items: center
+    gap: 12px
+    &--side-right
+        flex-direction: row-reverse
+    &__label 
+        color: #696B75
+        font-size: 16px
+        line-height: 24px
+.checkbox
+  display: flex
+
+.checkbox__field
+  position: absolute
+  width: 1px
+  height: 1px
+  padding: 0
+  margin: -1px
+  overflow: hidden
+  clip: rect(0, 0, 0, 0)
+  white-space: nowrap
+  border-width: 0
+
+.checkbox__marker
+  display: flex
+  align-items: center
+  justify-content: center
+  width: 24px
+  height: 24px
+  transition-property: all
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1)
+  transition-duration: 300ms
+  border-radius: 4px
+  cursor: pointer
+
+  &::before
+    content: ""
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='11' height='8' viewBox='0 0 11 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M10 1L5.15092 6.91548C5.11369 6.9609 5.04553 6.96461 5.00359 6.92351L1 3' stroke='white' stroke-width='2' stroke-linecap='round'/%3e%3c/svg%3e ")
+    background-position: center
+    background-repeat: no-repeat
+    background-size: contain
+    height: 8px
+    width: 11px
+    transition: all cubic-bezier(0.4, 0, 0.2, 1) 300ms
+    opacity: 0
+
+  &--full-size::after
+    position: absolute
+    inset: 0
+
+  &--color-green
+    background: rgba(153, 233, 181, 1)
+
+    &:hover
+        background: rgba(73, 198, 116, 1)
+
+  &--color-yellow
+    background: rgba(255, 234, 167, 1)
+
+    &:hover
+        background: rgba(255, 195, 80, 1)
+
+  &--style-circle 
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 20px
+    height: 20px
+    cursor: pointer
+    border-radius: 100%
+    box-sizing: border-box
+    border: 2px solid rgba(73, 198, 116, 1)
+    background: white
+
+  &--style-circle::before
+    content: ""
+    width: 8px
+    height: 8px
+    border-radius: 100%
+    background: rgba(73, 198, 116, 1)
+    opacity: 0
+    transition-property: all
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1)
+    transition-duration: 300ms
+
+.checkbox__field:checked ~ .checkbox__marker--color-yellow
+  background: #FFC350
+
+.checkbox__marker.green
+  background: #99E9B5
+
+.checkbox__field:checked ~ .checkbox__marker--color-green
+  background: #49C674
+
+
+.checkbox__field:checked ~ .checkbox__marker::before
+  opacity: 100
+
+
+.checkbox__field:checked ~ .checkbox__marker--style-circle::before 
+  opacity: 100

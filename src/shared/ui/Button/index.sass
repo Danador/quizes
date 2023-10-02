@@ -1,0 +1,97 @@
+.primary
+  transition-property: all
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1)
+  transition-duration: 300ms
+  box-sizing: border-box
+  border-radius: 4px
+  font-size: 16px
+  line-height: 22px
+  cursor: pointer
+  position: relative
+  text-decoration: none
+  display: grid
+  align-items: center
+  justify-content: center
+
+  &.big
+    padding: 20px 30px
+
+  &.normal
+    padding: 15px 20px
+
+  &.small
+    padding: 10px
+
+  &.right
+    grid-template-columns: 1fr auto
+    gap: 10px
+
+  &.left
+    grid-template-columns: auto 1fr
+    gap: 10px
+
+.secondary 
+  transition-property: all
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1)
+  transition-duration: 300ms
+  box-sizing: border-box
+  border: 1px solid #99E9B5
+  border-radius: 4px
+  font-size: 16px
+  line-height: 22px
+  cursor: pointer
+  position: relative
+  color: #696B75
+  background: transparent
+
+  &:hover
+    color: #FFC350
+    border-color: #FFC350
+
+  &.big
+    padding: 20px 30px
+
+  &.normal
+    padding: 15px 20px
+
+  &.small
+    padding: 15px 20px
+
+  &.right
+    display: grid
+    grid-template-columns: 1fr auto
+    align-items: center
+    gap: 10px
+
+  &.left
+    display: grid
+    grid-template-columns: auto 1fr
+    align-items: center
+    gap: 10px
+
+.stroke 
+  transition-property: all
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1)
+  transition-duration: 300ms
+  cursor: pointer
+
+  &.big
+    padding: 20px 30px
+
+  &.normal
+    padding: 15px 20px
+
+  &.small
+    padding: 10px 10px
+
+  &.right
+    display: flex
+    justify-content: center
+    align-items: center
+    gap: 10px
+
+  &.left
+    display: flex
+    justify-content: center
+    align-items: center
+    gap: 10px
